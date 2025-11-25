@@ -38,7 +38,7 @@
             @foreach (var cp in Model.ClientesProcessos)
             {
                 <li>
-                    Processo @cp.ProcessoOrigem.ProcessoId - @cp.ProcessoOrigem.Descricao
+                    @cp.ProcessoOrigem.Tipo - @cp.ProcessoOrigem.Descricao
                 </li>
             }
         </ul>

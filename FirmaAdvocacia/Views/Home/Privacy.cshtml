@@ -1,6 +1,208 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    .privacy-container {
+        padding: 2rem 0;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .privacy-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: conic-gradient(black)
+        border-radius: 12px;
+        color: black;
+    }
+
+    .privacy-title {
+        color: #FFD700;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .privacy-subtitle {
+        font-size: 2rem;
+        color: yellow;
+        margin-bottom: 0;
+    }
+
+    .privacy-content {
+        background: -webkit-radial-gradient(); 
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid #FFD700;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #dee2e6; 
+    }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+    .section-title {
+        color: yellow;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-content {
+        color: #495057; 
+        font-size: 1.2rem;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .highlight-box {
+        background: #e9ecef; 
+        border-left: 4px solid #FFD700;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+        color:black;
+    }
+
+    .contact-info {
+        background: #e9ecef;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        color: black;
+    }
+
+    .update-date {
+        text-align: center;
+        color: yellow; 
+        font-style: italic;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .icon {
+        color: #FFD700;
+        font-size: 1.5rem;
+    }
+
+    /* Listas com cinza fosco */
+    ul {
+        color: darkgrey;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    strong {
+        color: #FFD700;
+    }
+</style>
+
+<div class="privacy-container">
+    <div class="privacy-header">
+        <h1 class="privacy-title">🔒 Privacy Policy</h1>
+        <p class="privacy-subtitle">Protegendo seus dados com transparência e segurança</p>
+    </div>
+
+    <div class="privacy-content">
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📋</span>
+                INTRODUÇÃO
+            </h2>
+            <div class="section-content">
+                <p>A <strong>FirmaAdvocacia</strong> valoriza sua privacidade e está comprometida em proteger suas informações pessoais. Esta política descreve como coletamos, usamos e protegemos seus dados.</p>
+
+                <div class="highlight-box">
+                    <strong>⚠️ Importante:</strong> Ao utilizar nossos serviços, você concorda com os termos desta política de privacidade.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔍</span>
+                Informações que Coletamos
+            </h2>
+            <div class="section-content">
+                <p>Coletamos apenas informações necessárias para prestar nossos serviços jurídicos:</p>
+                <ul>
+                    <li><strong>Dados Pessoais:</strong> Nome, CPF, endereço, telefone, e-mail</li>
+                    <li><strong>Dados do Processo:</strong> Informações relacionadas aos seus casos jurídicos</li>
+                    <li><strong>Dados de Contato:</strong> Histórico de comunicação com nosso escritório</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🛡️</span>
+                Como Usamos suas Informações
+            </h2>
+            <div class="section-content">
+                <p>Suas informações são utilizadas exclusivamente para:</p>
+                <ul>
+                    <li>Prestação de serviços jurídicos especializados</li>
+                    <li>Comunicação sobre andamento de processos</li>
+                    <li>Agendamento de consultas e audiências</li>
+                    <li>Cumprimento de obrigações legais</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🔐</span>
+                Proteção de Dados
+            </h2>
+            <div class="section-content">
+                <p>Implementamos medidas de segurança robustas para proteger suas informações:</p>
+                <ul>
+                    <li>Criptografia de dados sensíveis</li>
+                    <li>Acesso restrito a pessoal autorizado</li>
+                    <li>Backups regulares e seguros</li>
+                    <li>Conformidade com a LGPD</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>🔒 Segurança:</strong> Seus dados são protegidos pelo sigilo profissional do advogado, conforme estabelecido pelo Estatuto da OAB.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📞</span>
+                Contato e Dúvidas
+            </h2>
+            <div class="section-content">
+                <p>Se tiver dúvidas sobre nossa política de privacidade, entre em contato:</p>
+
+                <div class="contact-info">
+                    <p><strong>📧 E-mail:</strong> privacidade@firmaadvocacia.com</p>
+                    <p><strong>📞 Telefone:</strong> (24) 99818-9409</p>
+                    <p><strong>🏢 Endereço:</strong> Rua Exemplo, 123 - São Paulo/SP</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="update-date">
+            <p>🔄 <strong>Última atualização:</strong> @DateTime.Now.ToString("dd/MM/yyyy")</p>
+        </div>
+    </div>
+</div>

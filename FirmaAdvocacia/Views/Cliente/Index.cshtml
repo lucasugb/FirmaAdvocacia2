@@ -4,27 +4,139 @@
     ViewData["Title"] = "Clientes";
 }
 
-<h1>Clientes</h1>
+<style>
+    h1 {
+        color: #FFD700;
+        margin-bottom: 25px;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 25px;
+        font-size: 1.3rem;
+        border: 2px solid #FFD700;
+    }
+    
+    .table th {
+        background-color: #2d3748;
+        color: #FFD700;
+        padding: 20px;
+        text-align: left;
+        border-bottom: 3px solid #FFD700;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    
+    .table td {
+        padding: 20px;
+        border-bottom: 2px solid #FFD700;
+        color: #2d3748;
+        font-size: 1.3rem;
+        vertical-align: middle;
+    }
+    
+    .table tr:hover {
+        background-color: #374866;
+    }
+    
+    a {
+        color: #FFD700;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.3rem;
+    }
+    
+    a:hover {
+        color: #FFC400;
+        text-decoration: underline;
+    }
+    
+    p a {
+        background-color: #FFD700;
+        color: #2d3748;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.4rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    p a:hover {
+        background-color: #FFC400;
+        color: #2d3748;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    }
+    
+    .action-links a {
+        margin-right: 15px;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: #fff9e6;
+        color: #2d3748;
+        display: inline-flex;   
+        align-items: center;     
+        gap: 6px;           
+        white-space: nowrap;
+    }
+    
+    .action-links a:hover {
+        background-color: #FFD700;
+        color: #2d3748;
+        text-decoration: none;
+    }
+    
+    .processos-list {
+        font-size: 1.1rem;
+        color: #4a5568;
+    }
+    
+    .nenhum-processo {
+        font-style: italic;
+        color: #718096;
+    }
+
+    .table th span.header-content {
+        display: inline-flex;       
+        align-items: center;           
+        gap: 8px;                      
+    }
+</style>
+
+<h1>👥 Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">
+        <i class="fas fa-plus-circle"></i> Create New
+    </a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                👤 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cpf)
+                🆔 @Html.DisplayNameFor(model => model.Cpf)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                📧 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                Processos
+                ⚖️ Processos
             </th>
-            <th></th>
+            <th>
+                🛠️ Ações
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -39,23 +151,23 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-             <td>
+            <td class="processos-list">
                 @if (item.ClientesProcessos != null && item.ClientesProcessos.Any())
                 {
                     foreach (var cp in item.ClientesProcessos)
                     {
-                        @cp.ProcessoOrigem?.Descricao <br />
+                        @cp.ProcessoOrigem?.Tipo <br />
                     }
                 }
                 else
                 {
-                    <i>Nenhum</i>
+                    <span class="nenhum-processo">Nenhum</span>
                 }
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ClienteId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ClienteId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ClienteId">Delete</a>
+            <td class="action-links">
+                <a asp-action="Edit" asp-route-id="@item.ClienteId">✏️ Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ClienteId">👁️ Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ClienteId">🗑️ Delete</a>
             </td>
         </tr>
 }

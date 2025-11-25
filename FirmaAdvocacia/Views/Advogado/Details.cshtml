@@ -10,25 +10,43 @@
     <h4>Advogado</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.OAB)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.OAB)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nome)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Especialidade)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Especialidade)
         </dd>
     </dl>
+    <h4>Processos do Advogado</h4>
+    <hr />
+
+    @if (Model.AdvogadosProcessos != null && Model.AdvogadosProcessos.Any())
+    {
+        <ul>
+            @foreach (var cp in Model.AdvogadosProcessos)
+            {
+                <li>
+                    @cp.ProcessoOrigem.Tipo - @cp.ProcessoOrigem.Descricao
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Este advogado não está vinculado a nenhum processo.</p>
+    }
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.AdvogadoId">Edit</a> |
