@@ -7,59 +7,63 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FirmaAdvocacia.styles.css" asp-append-version="true" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="bg-dark-custom">
+<body class="bg-dark-custom d-flex flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black-custom border-bottom border-warning-custom mb-3">
             <div class="container">
                 <a class="navbar-brand fw-bold text-warning-custom" asp-area="" asp-controller="Home" asp-action="Index">
                     <i class="fas fa-balance-scale me-2"></i>FirmaAdvocacia
                 </a>
+
                 <button class="navbar-toggler border-warning-custom" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
+
                         <li class="nav-item">
                             <a class="nav-link text-warning-custom" asp-area="" asp-controller="Home" asp-action="Index">
                                 <i class="fas fa-home me-1"></i>Home
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-warning-custom" asp-area="" asp-controller="Advogado" asp-action="Index">
                                 <i class="fas fa-user-tie me-1"></i>Advogados
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-warning-custom" asp-area="" asp-controller="Cliente" asp-action="Index">
                                 <i class="fas fa-users me-1"></i>Clientes
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-warning-custom" asp-area="" asp-controller="Processo" asp-action="Index">
                                 <i class="fas fa-folder me-1"></i>Processos
                             </a>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
-    <div class="container">
+    <div class="container flex-grow-1 mb-5">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top border-warning-custom footer text-warning-custom bg-black-custom">
-        <div class="container py-3">
-            &copy; 2025 - FirmaAdvocacia - <a class="text-warning-custom" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+    <footer class="border-top border-warning-custom footer text-warning-custom bg-black-custom mt-auto py-3">
+        <div class="container">
+            &copy; 2025 - FirmaAdvocacia -
+            <a class="text-warning-custom" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

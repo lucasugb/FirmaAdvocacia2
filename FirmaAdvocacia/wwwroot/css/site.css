@@ -6,10 +6,12 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
     color: #ffffff;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 /* === CORES DO TEMA === */
@@ -242,6 +244,28 @@ table.table td {
     color: #FFC400;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
 
 
 
